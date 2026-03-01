@@ -27,7 +27,7 @@ spark = (
 bucket = sys.argv[1]
 execution_date = sys.argv[2]
 
-print(f"🚀 Starting Silver Processing for date: {execution_date}")
+print(f" Starting Silver Processing for date: {execution_date}")
 
 
 # 1. Reading of Bronze Layer
@@ -53,7 +53,7 @@ DROP_COLS = [
 existing_drop = [c for c in DROP_COLS if c in raw.columns]
 cleaned = raw.drop(*existing_drop)
 
-print(f"🧹 Dropped {len(existing_drop)} columns")
+print(f" Dropped {len(existing_drop)} columns")
 
 
 # 3. Renaming of Columns
