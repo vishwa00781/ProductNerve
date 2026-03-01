@@ -64,7 +64,7 @@ Post understanding the Data the aim is to
 # Conclusion:
 - This project gave us the understanding of the pipeline, if this has sparked the curiosity in you about Data Engineering, you can connect with me.
 Linkedin : [Vishwajeet Rupnar](https://www.linkedin.com/in/vishwajeetrupnar)
-- I would Love to hear back from each one worked on this project, if any addtion requuired for better understanding, do let me know. _Happy Placements!!_
+- I would Love to hear back from each one worked on this project, if any addition required for better understanding, do let me know. _Happy Placements!!_
 
 ![you are more than you think!](images/Happiness.png)
 
