@@ -16,7 +16,7 @@ bucket = sys.argv[1]
 
 print("Starting gold processing")
 
-# 1. Reading alll the tables from Silver Layer 
+# 1. Reading all the tables from Silver Layer 
 silver_user = spark.read.csv(f"s3a://{bucket}/silver/dim_user/*.csv", header=True, inferSchema=True)
 silver_device = spark.read.csv(f"s3a://{bucket}/silver/dim_device/*.csv", header=True, inferSchema=True)
 silver_geo = spark.read.csv(f"s3a://{bucket}/silver/dim_geo/*.csv", header=True, inferSchema=True)
@@ -26,7 +26,7 @@ silver_fact = spark.read.csv(f"s3a://{bucket}/silver/fact_events/*.csv", header=
 
 print(" Loaded all silver tables")
 
-# 2. Loading the tables into Gold Schema ─────────────────────────────────────────
+# 2. Loading the tables into Gold Schema
 
 gold_dim_user = (
     silver_user
@@ -113,13 +113,13 @@ for table_name, df in GOLD_TABLES.items():
 
 print(f" Gold layer complete - {gold_fact_events.count()} events processed")
 
-# 4. Loading the tables into Snowflake ───────────────────────────────────────────
+# 4. Loading the tables into Snowflake
 print("Starting Snowflake load...")
 
 import snowflake.connector
 import os
 
-# ── Snowflake Connection ────────────────────────────────────────────
+#  Snowflake Connection 
 conn = snowflake.connector.connect(
     account=os.getenv("SNOWFLAKE_ACCOUNT"),
     user=os.getenv("SNOWFLAKE_USER"),
@@ -239,7 +239,7 @@ cursor.execute(f"""
     PURGE = TRUE;
 """)
 
-print("✓ Loaded fact_events")
+print("Loaded fact_events")
 
 #  4. Validation of Row Counts 
 print("Validating row counts...")
@@ -254,7 +254,7 @@ cursor.execute(f"""
 """)
 
 for row in cursor.fetchall():
-    print(f"✓ {row[0]}: {row[1]:,} rows")
+    print(f" {row[0]}: {row[1]:,} rows")
 
 cursor.close()
 conn.close()
