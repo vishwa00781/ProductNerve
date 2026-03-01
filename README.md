@@ -66,6 +66,8 @@ Post understanding the Data the aim is to
 Linkedin : [Vishwajeet Rupnar](https://www.linkedin.com/in/vishwajeetrupnar)
 - I would Love to hear back from each one worked on this project, if any addtion requuired for better understanding, do let me know. _Happy Placements!!_
 
+![you are more than you think!](images/Happiness.gif)
+
 
 
 
